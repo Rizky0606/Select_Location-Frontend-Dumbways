@@ -1,6 +1,7 @@
 import { Component } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import Table from "react-bootstrap/Table";
 
 interface DataProvinces {
   id: number;
@@ -252,11 +253,37 @@ export default class App extends Component<{ value?: string }, State> {
         this.state.getWard === "" ? (
           <></>
         ) : (
-          <div style={{ marginTop: "20px" }}>
-            <h3>Province : {this.state.dataUser.province}</h3>
-            <h3>Regencie : {this.state.dataUser.regencie}</h3>
-            <h3>Subdistrict : {this.state.dataUser.subdistrict}</h3>
-            <h3>Ward : {this.state.dataUser.ward}</h3>
+          <div style={{ marginTop: "30px" }}>
+            {/* <h4>Province : {this.state.dataUser.province}</h4>
+            <h4>Regencie : {this.state.dataUser.regencie}</h4>
+            <h4>Subdistrict : {this.state.dataUser.subdistrict}</h4>
+            <h4>Ward : {this.state.dataUser.ward}</h4> */}
+            <Table>
+              <thead>
+                <tr>
+                  <td>Province</td>
+                  <td>:</td>
+                  <td>{this.state.dataUser.province}</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Regencie</td>
+                  <td>:</td>
+                  <td>{this.state.dataUser.regencie}</td>
+                </tr>
+                <tr>
+                  <td>Subdistrict</td>
+                  <td>:</td>
+                  <td>{this.state.dataUser.subdistrict}</td>
+                </tr>
+                <tr>
+                  <td>Ward</td>
+                  <td>:</td>
+                  <td>{this.state.dataUser.ward}</td>
+                </tr>
+              </tbody>
+            </Table>
           </div>
         )}
       </div>
