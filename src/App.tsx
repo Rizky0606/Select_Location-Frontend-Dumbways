@@ -124,7 +124,7 @@ export default class App extends Component<{ value?: string }, State> {
     try {
       if (this.state.getSubdistrict !== "") {
         fetch(
-          `http://www.emsifa.com/api-wilayah-indonesia/api/villages/${this.state.getSubdistrict}.json`
+          `https://www.emsifa.com/api-wilayah-indonesia/api/villages/${this.state.getSubdistrict}.json`
         )
           .then((res) => res.json())
           .then((data) => {
