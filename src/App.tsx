@@ -190,102 +190,113 @@ export default class App extends Component<{ value?: string }, State> {
       this.state;
 
     return (
-      <div style={{ margin: "70px", fontSize: "20px" }}>
-        <div>
-          <h1>Where Do You Live?</h1>
-        </div>
-        <InputSelect
-          data={dataProvince}
-          label={"Provinces"}
-          onChangeData={(e: any) =>
-            this.setState({ getProvince: e.target.value })
-          }
-        />
-        <InputSelect
-          data={dataRegencie}
-          label={"Regencies"}
-          onChangeData={(e: any) =>
-            this.setState({ getRegencie: e.target.value })
-          }
-        />
-        <InputSelect
-          data={dataSubdistrict}
-          label={"Subdistricts"}
-          onChangeData={(e: any) =>
-            this.setState({ getSubdistrict: e.target.value })
-          }
-        />
-        <InputSelect
-          data={dataWard}
-          label={"Wards"}
-          onChangeData={(e: any) => this.setState({ getWard: e.target.value })}
-        />
-        {/* <Button
+      <div
+        style={{
+          margin: "70px",
+          fontSize: "20px",
+          boxShadow: "6px 6px 49px 2px rgba(51,51,51,0.8)",
+          borderRadius: "20px",
+        }}
+      >
+        <div style={{ padding: "20px" }}>
+          <div>
+            <h1>Where Do You Live?</h1>
+          </div>
+          <InputSelect
+            data={dataProvince}
+            label={"Provinces"}
+            onChangeData={(e: any) =>
+              this.setState({ getProvince: e.target.value })
+            }
+          />
+          <InputSelect
+            data={dataRegencie}
+            label={"Regencies"}
+            onChangeData={(e: any) =>
+              this.setState({ getRegencie: e.target.value })
+            }
+          />
+          <InputSelect
+            data={dataSubdistrict}
+            label={"Subdistricts"}
+            onChangeData={(e: any) =>
+              this.setState({ getSubdistrict: e.target.value })
+            }
+          />
+          <InputSelect
+            data={dataWard}
+            label={"Wards"}
+            onChangeData={(e: any) =>
+              this.setState({ getWard: e.target.value })
+            }
+          />
+          {/* <Button
           variant="primary"
           style={{ marginTop: "30px", width: "100px" }}
           onClick={() => this.handleSubmitData()}
         >
           Submit
         </Button> */}
-        {this.state.getProvince !== "" &&
-        this.state.getRegencie !== "" &&
-        this.state.getSubdistrict !== "" &&
-        this.state.getWard !== "" ? (
-          <Button
-            variant="primary"
-            style={{ marginTop: "30px", width: "100px" }}
-            onClick={() => this.handleSubmitData()}
-          >
-            Submit
-          </Button>
-        ) : (
-          <Button
-            variant="secondary"
-            style={{ marginTop: "30px", width: "100px" }}
-            disabled
-          >
-            Submit
-          </Button>
-        )}
-        {this.state.getProvince === "" ||
-        this.state.getRegencie === "" ||
-        this.state.getSubdistrict === "" ||
-        this.state.getWard === "" ? (
-          <></>
-        ) : (
-          <div style={{ marginTop: "30px" }}>
-            {/* <h4>Province : {this.state.dataUser.province}</h4>
+          {this.state.getProvince !== "" &&
+          this.state.getRegencie !== "" &&
+          this.state.getSubdistrict !== "" &&
+          this.state.getWard !== "" ? (
+            <Button
+              variant="primary"
+              style={{ marginTop: "30px", width: "100px" }}
+              onClick={() => this.handleSubmitData()}
+            >
+              Submit
+            </Button>
+          ) : (
+            <Button
+              variant="secondary"
+              style={{ marginTop: "30px", width: "100px" }}
+              disabled
+            >
+              Submit
+            </Button>
+          )}
+          {this.state.getProvince === "" ||
+          this.state.getRegencie === "" ||
+          this.state.getSubdistrict === "" ||
+          this.state.getWard === "" ? (
+            <></>
+          ) : (
+            <div style={{ marginTop: "30px" }}>
+              {/* <h4>Province : {this.state.dataUser.province}</h4>
             <h4>Regencie : {this.state.dataUser.regencie}</h4>
             <h4>Subdistrict : {this.state.dataUser.subdistrict}</h4>
             <h4>Ward : {this.state.dataUser.ward}</h4> */}
-            <Table>
-              <thead>
-                <tr>
-                  <td>Province</td>
-                  <td>:</td>
-                  <td>{this.state.dataUser.province}</td>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Regencie</td>
-                  <td>:</td>
-                  <td>{this.state.dataUser.regencie}</td>
-                </tr>
-                <tr>
-                  <td>Subdistrict</td>
-                  <td>:</td>
-                  <td>{this.state.dataUser.subdistrict}</td>
-                </tr>
-                <tr>
-                  <td>Ward</td>
-                  <td>:</td>
-                  <td>{this.state.dataUser.ward}</td>
-                </tr>
-              </tbody>
-            </Table>
-          </div>
-        )}
+              <Table>
+                <thead>
+                  <tr>
+                    <td>Province</td>
+                    <td>:</td>
+                    <td>{this.state.dataUser.province}</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Regencie</td>
+                    <td>:</td>
+                    <td>{this.state.dataUser.regencie}</td>
+                  </tr>
+                  <tr>
+                    <td>Subdistrict</td>
+                    <td>:</td>
+                    <td>{this.state.dataUser.subdistrict}</td>
+                  </tr>
+                  <tr>
+                    <td>Ward</td>
+                    <td>:</td>
+                    <td>{this.state.dataUser.ward}</td>
+                  </tr>
+                </tbody>
+              </Table>
+            </div>
+          )}
+        </div>
       </div>
     );
   }
